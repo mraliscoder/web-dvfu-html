@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список гор</title>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="table.html">Список гор</a></li>
+    </ul>
+	<hr>
+	<h1>Список гор</h1>
+
+	<form>
+		<h3>Фильтр</h3>
+		<p>
+			<label>
+				Название: 
+				<input type="text" name="name">
+			</label>
+		</p>
+		<p>
+			<label>
+				Высота от: 
+				<input type="number" name="height_from" placeholder="От">
+			</label>
+			<label>
+				до:
+				<input type="number" name="height_to" placeholder="До">
+			</label>
+			
+		</p>
+		<p>
+			<label>
+				Горная система:
+				<input type="text" name="system">
+			</label>
+		</p>
+		<p>
+			<label>
+				Тип вершины:
+				<select name="type">
+					<option value="1">Вулкан</option>
+					<option value="2">Горный пик</option>
+					<option value="3">Ледниковая вершина</option>
+				</select>
+			</label>
+		</p>
+		<p>
+			<label>
+				Регион:
+				<input type="text" name="region">
+			</label>
+		</p>
+		<p>
+			<button>Искать</button>
+			<button type="reset">Сбросить</button>
+		</p>
+	</form>
+
+	<form>
+		<h3>Сортировка</h3>
+		<p>
+			<label>
+				Первый уровень:
+				<select name="sort_1">
+					<option value="">-- нет --</option>
+					<option value="name">Название</option>
+					<option value="height">Высота</option>
+					<option value="system">Система</option>
+					<option value="type">Тип</option>
+					<option value="region">Регион</option>
+				</select>
+			</label>
+			<label>
+				<input type="checkbox" name="sort_1_desc">
+				по убыванию?
+			</label>
+		</p>
+		<p>
+			<label>
+				Второй уровень:
+				<select name="sort_2">
+					<option value="">-- нет --</option>
+					<option value="name">Название</option>
+					<option value="height">Высота</option>
+					<option value="system">Система</option>
+					<option value="type">Тип</option>
+					<option value="region">Регион</option>
+				</select>
+			</label>
+			<label>
+				<input type="checkbox" name="sort_2_desc">
+				по убыванию?
+			</label>
+		</p>
+		<p>
+			<label>
+				Третий уровень:
+				<select name="sort_3">
+					<option value="">-- нет --</option>
+					<option value="name">Название</option>
+					<option value="height">Высота</option>
+					<option value="system">Система</option>
+					<option value="type">Тип</option>
+					<option value="region">Регион</option>
+				</select>
+			</label>
+			<label>
+				<input type="checkbox" name="sort_3_desc">
+				по убыванию?
+			</label>
+		</p>
+		<p>
+			<button>Сортировать</button>
+			<button type="reset">Сбросить</button>
+		</p>
+	</form>
+
+	<hr>
+	<table border="1" cellpadding="7" cellspacing="0" width="950">
+    <thead>
+        <tr>
+            <th>Место</th>
+            <th>Название вершины</th>
+            <th>Высота (м)</th>
+            <th>Горная система</th>
+            <th>Тип вершины</th>
+            <th>Регион России</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Эльбрус</td><td>5642</td><td>Большой Кавказ</td><td>Вулкан</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>2</td><td>Дыхтау</td><td>5204</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>3</td><td>Коштантау</td><td>5152</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>4</td><td>Пик Пушкина</td><td>5100</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>5</td><td>Джангитау</td><td>5085</td><td>Большой Кавказ</td><td>Ледниковая вершина</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>6</td><td>Шхара</td><td>5068</td><td>Большой Кавказ</td><td>Ледниковая вершина</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>7</td><td>Мижирги</td><td>5047</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>8</td><td>Казбек</td><td>5032</td><td>Большой Кавказ</td><td>Вулкан</td><td>Северная Осетия</td></tr>
+        <tr><td>9</td><td>Катын-Тау</td><td>4970</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>10</td><td>Шота Руставели</td><td>4859</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>11</td><td>Гестола</td><td>4860</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>12</td><td>Джимара</td><td>4780</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>13</td><td>Ключевская Сопка</td><td>4750</td><td>Восточный хребет</td><td>Вулкан</td><td>Камчатский край</td></tr>
+        <tr><td>14</td><td>Уилпата</td><td>4646</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>15</td><td>Саухох</td><td>4636</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>16</td><td>Кукуртли-Колбаши</td><td>4624</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>17</td><td>Майлихох</td><td>4597</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>18</td><td>Камень</td><td>4575</td><td>Восточный хребет</td><td>Вулкан</td><td>Камчатский край</td></tr>
+        <tr><td>19</td><td>Белуха</td><td>4509</td><td>Алтайские горы</td><td>Горный пик</td><td>Республика Алтай</td></tr>
+        <tr><td>20</td><td>Саллыннгантау</td><td>4507</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>21</td><td>Тебулосмта</td><td>4492</td><td>Большой Кавказ</td><td>Горный пик</td><td>Чечня</td></tr>
+        <tr><td>22</td><td>Суган</td><td>4489</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>23</td><td>Базардюзю</td><td>4466</td><td>Большой Кавказ</td><td>Горный пик</td><td>Дагестан</td></tr>
+        <tr><td>24</td><td>Чанчахи</td><td>4461</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>25</td><td>Донгузорун-Чегет-Карабаши</td><td>4454</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>26</td><td>Шан</td><td>4451</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>27</td><td>Тепли</td><td>4431</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>28</td><td>Чатынтау</td><td>4411</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>29</td><td>Адай-Хох</td><td>4408</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>30</td><td>Сонгути</td><td>4405</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>31</td><td>Тютюбаши</td><td>4404</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>32</td><td>Вологата</td><td>4396</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>33</td><td>Караугом</td><td>4364</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>34</td><td>Адырсубаши</td><td>4349</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>35</td><td>Лабода</td><td>4313</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>36</td><td>Бачахи</td><td>4291</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>37</td><td>Диклосмта</td><td>4285</td><td>Большой Кавказ</td><td>Горный пик</td><td>Чечня</td></tr>
+        <tr><td>38</td><td>Пик Кавказа</td><td>4280</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>39</td><td>Джорашты</td><td>4278</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>40</td><td>Бжедух</td><td>4271</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>41</td><td>Комито</td><td>4261</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>42</td><td>Суллуколбаши</td><td>4251</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>43</td><td>Каяартыбаши</td><td>4250</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>44</td><td>Башилтау</td><td>4248</td><td>Большой Кавказ</td><td>Горный пик</td><td>Кабардино-Балкария</td></tr>
+        <tr><td>45</td><td>Зейгаланхох</td><td>4244</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>46</td><td>Заромаг</td><td>4203</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>47</td><td>Дончентыхох</td><td>4192</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>48</td><td>Калота</td><td>4182</td><td>Большой Кавказ</td><td>Горный пик</td><td>Северная Осетия</td></tr>
+        <tr><td>49</td><td>Доносмта</td><td>4179</td><td>Большой Кавказ</td><td>Горный пик</td><td>Чечня</td></tr>
+        <tr><td>50</td><td>Таван-Богдо-Ула</td><td>4082</td><td>Алтайские горы</td><td>Горный пик</td><td>Республика Алтай</td></tr>
+        <tr><td>51</td><td>Плоская Ближняя</td><td>4057</td><td>Восточный хребет</td><td>Вулкан</td><td>Камчатский край</td></tr>
+    </tbody>
+</table>
+
+<hr>
+<h3>График</h3>
+<form>
+	<p>
+		<label>
+			Группировка:
+			<select name="group_by">
+				<option value="system">Горная система</option>
+				<option value="type">Тип вершины</option>
+				<option value="region" selected>Регион</option>
+			</select>
+		</label>
+	</p>
+	<p>
+		<label>
+			<input type="checkbox" name="graph_min" checked> Минимальная высота
+		</label>
+		<label>
+			<input type="checkbox" name="graph_max" checked> Максимальная высота
+		</label>
+	</p>
+	<p>
+		<button>Построить</button>
+	</p>
+</form>
+<!-- <img src="images/graph.png" alt="График высот" width="700"> -->
+<hr>
+<a href="https://edwardcode.net/">Эдуард Ильин</a>, Б9123-09.03.04
+</body>
+</html>
