@@ -16,7 +16,7 @@
     color: white;
     text-decoration: none;
     background-color: #666666;
-    margin-left: 2px;
+    border-right: 1px solid #ffffff;
 }
 .nav-item.nav-item-active {
     background-color: #04AA6D;
