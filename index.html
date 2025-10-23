@@ -4,28 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Горы</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="table.html">Список гор</a></li>
-    </ul>
-    <h1>Главная</h1>
-    <hr>
-    <a href="rock.html"><img src="images/1.jpg" alt="Эльбрус" width="370"></a>
-    <a href="rock.html"><img src="images/2.jpg" alt="Дыхтау" width="370"></a>
-    <a href="rock.html"><img src="images/3.jpg" alt="Коштантау" width="370"></a>
-    <a href="rock.html"><img src="images/4.jpg" alt="Пик Пушкина" width="370"></a>
-    <hr>
-    <h3><a href="rock.html"><img align="center" src="images/5.jpg" alt="Джангитау" ></a> Джангитау</h3>
-    <br>
-    <p>Джангита́у[4] (карач.-балк. Джангы тау — «Новая гора»), или Джанга[4] (груз. ჯანღა) — горная вершина в центральной части Главного Кавказского хребта на границе России и Грузии. Высота главной вершины 5085 м[2]. Это пятая по высоте вершина Российской части Кавказа, и вторая в Грузии (после Шхары). В массиве Джангитау выделяют ещё две вершины: Западную (5058,8 м, 43°01′08″ N, 43°03′07″E), — именно она на картах генштаба обозначена как г. Джангитау, и Восточную (5033,6 м, 43°00′48″ N, 43°04′14″E), на тех же картах именуемая как Пик Пушкина, который находится в 6,5 км северо-восточнее в массиве Дыхтау[5]. Джангитау находится в центре 13-километрового горного массива, известного под названием Безенгийская стена и популярна в альпинизме. На вершину проложены маршруты 4Б-5А категории сложности[1], также через неё проходит маршрут «траверс Безенгийской стены» (5Б, зимний вариант — 6А).</p>
-    
-    <h3><a href="rock.html"><img align="center" src="images/6.jpg" alt="Шхара" ></a> Шхара</h3>
-    <br>
-    <p>Шха́ра (груз. შხარა — «полосатая», карач.-балк. ушхара) — горная вершина в центральной части Главного Кавказского (Водораздельного) хребта, является его высочайшей точкой, также высочайшая точка Грузии, также вторая по высоте гора Европы (при условии проведения границы между Европой и Азией по Главному Кавказскому хребту или южнее). Высота главной вершины — 5203 м, уточнена в 2010 году альпинистами Питером Шоном и Борисом Авдеевым с помощью приемника DGPS[2]. В массиве Шхары, также выделяют западную вершину — 5068,8 м (42°59′57″ N, 43°05′23″E)[3] (на картах генштаба[4] она ошибочно обозначена как главная) и восточную вершину — 4866,5 м (43°00′12″ N, 43°07′39″E).</p>
-
-    <hr>
-    <a href="https://edwardcode.net/">Эдуард Ильин</a>, Б9123-09.03.04
+    <nav class="nav">
+        <a href="index.html" class="nav-item nav-item-active">Главная</a>
+        <a href="table.html" class="nav-item">Список гор</a>
+    </nav>
+    <div class="container">
+        <div class="gallery">
+            <a href="rock.html"><img src="images/1.jpg" alt="Гора" class="gallery-img gallery-img-large gallery-img-1"></a>
+            <a href="rock.html"><img src="images/2.jpg" alt="Гора" class="gallery-img gallery-img-2"></a>
+            <a href="rock.html"><img src="images/3.jpg" alt="Гора" class="gallery-img gallery-img-3"></a>
+            <a href="rock.html"><img src="images/4.jpg" alt="Гора" class="gallery-img gallery-img-4"></a>
+            <a href="rock.html"><img src="images/5.jpg" alt="Гора" class="gallery-img gallery-img-5"></a>
+            <a href="rock.html"><img src="images/6.jpg" alt="Гора" class="gallery-img gallery-img-large gallery-img-6"></a>
+        </div>
+        <div class="sidebar-left">
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/7.jpg" alt="Рисунок 7" class="sidebar-img">
+                <h4 class="sidebar-title">Мижирги</h4>
+                <div class="sidebar-text">Высота 5047 м, расположена в системие Большой Кавказ</div>
+            </a>
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/8.jpg" alt="Рисунок 8" class="sidebar-img">
+                <h4 class="sidebar-title">Казбек</h4>
+                <div class="sidebar-text">Высота 5032 м, расположена в системие Большой Кавказ</div>
+            </a>
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/9.jpg" alt="Рисунок 9" class="sidebar-img">
+                <h4 class="sidebar-title">Катын-Тау</h4>
+                <div class="sidebar-text">Высота 5032 м, расположена в системие Большой Кавказ</div>
+            </a>
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/10.jpg" alt="Рисунок 10" class="sidebar-img">
+                <h4 class="sidebar-title">Шота Руставели</h4>
+                <div class="sidebar-text">Высота 4859 м, расположена в системие Большой Кавказ</div>
+            </a>
+        </div>
+        <div class="main-content">
+            <div class="article-item">
+                <h3 class="article-title">Джангитау</h3>
+                <div class="article-content-1">
+                    Джангита́у[4] (карач.-балк. Джангы тау — «Новая гора»), или Джанга[4] (груз. ჯანღა) — горная вершина в центральной части Главного Кавказского хребта на границе России и Грузии. Высота главной вершины 5085 м[2]. Это пятая по высоте вершина Российской части Кавказа, и вторая в Грузии (после Шхары). В массиве Джангитау выделяют ещё две вершины: Западную (5058,8 м, 43°01′08″ N, 43°03′07″E), — именно она на картах генштаба обозначена как г. Джангитау, и Восточную (5033,6 м, 43°00′48″ N, 43°04′14″E), на тех же картах именуемая как Пик Пушкина, который находится в 6,5 км северо-восточнее в массиве Дыхтау[5]. Джангитау находится в центре 13-километрового горного массива, известного под названием Безенгийская стена и популярна в альпинизме. На вершину проложены маршруты 4Б-5А категории сложности[1], также через неё проходит маршрут «траверс Безенгийской стены» (5Б, зимний вариант — 6А).
+                    <div class="btn-container">
+                        <a href="rock.html" class="btn-link btn-link-right">Подробнее &raquo;</a>
+                    </div>
+                </div>
+                <img src="images/5.jpg" alt="Джангитау" class="article-img-1">
+            </div>
+            <div class="article-item">
+                <h3 class="article-title">Шха́ра</h3>
+                <img src="images/6.jpg" alt="Шха́ра" class="article-img-2">
+                <div class="article-content-2">Шха́ра (груз. შხარა — «полосатая», карач.-балк. ушхара) — горная вершина в центральной части Главного Кавказского (Водораздельного) хребта, является его высочайшей точкой, также высочайшая точка Грузии, также вторая по высоте гора Европы (при условии проведения границы между Европой и Азией по Главному Кавказскому хребту или южнее). Высота главной вершины — 5203 м, уточнена в 2010 году альпинистами Питером Шоном и Борисом Авдеевым с помощью приемника DGPS[2]. В массиве Шхары, также выделяют западную вершину — 5068,8 м (42°59′57″ N, 43°05′23″E)[3] (на картах генштаба[4] она ошибочно обозначена как главная) и восточную вершину — 4866,5 м (43°00′12″ N, 43°07′39″E).</div>
+                <div class="btn-container">
+                    <a href="rock.html" class="btn-link">Подробнее &raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-right">
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/11.jpg" alt="Рисунок 11" class="sidebar-img">
+                <h4 class="sidebar-title">Гестола</h4>
+                <div class="sidebar-text">Высота 4860 м, расположена в системие Большой Кавказ</div>
+            </a>
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/12.jpg" alt="Рисунок 12" class="sidebar-img">
+                <h4 class="sidebar-title">Джимара</h4>
+                <div class="sidebar-text">Высота 4780 м, расположена в системие Большой Кавказ</div>
+            </a>
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/13.jpg" alt="Рисунок 13" class="sidebar-img">
+                <h4 class="sidebar-title">Ключевская Сопка</h4>
+                <div class="sidebar-text">Высота 4750 м, расположена в системие Восточный хребет</div>
+            </a>
+            <a href="rock.html" class="sidebar-item">
+                <img src="images/14.jpg" alt="Рисунок 14" class="sidebar-img">
+                <h4 class="sidebar-title">Уилпата</h4>
+                <div class="sidebar-text">Высота 4646 м, расположена в системие Большой Кавказ</div>
+            </a>
+        </div>
+        <!-- <hr> -->
+        <!-- <a href="https://edwardcode.net/">Эдуард Ильин</a>, Б9123-09.03.04 -->
+    </div>
 </body>
 </html>
