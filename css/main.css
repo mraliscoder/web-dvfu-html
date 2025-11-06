@@ -102,6 +102,8 @@
     padding: 20px;
     border-radius: 20px;
     display: grid;
+    gap: 5px;
+    align-items: center;
 }
 .article-item-1 {
     grid-template-columns: 100px 1fr 200px;
