@@ -3,104 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
     <title>Горы</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav class="nav">
-        <a href="index.html" class="nav-item nav-item-active">Главная</a><!--
-        --><a href="table.html" class="nav-item">Список гор</a><!--
-        --><a href="rock.html" class="nav-item">О горе</a><!--
-        --><a href="images/1.jpg" class="nav-item">Картинка</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Горы России</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="table.html">Список гор</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rock.html">О горе</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="images/1.jpg">Картинка</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <div class="container">
-        <div class="gallery">
-            <a href="rock.html" class="gallery-img-1"><img src="images/1.jpg" alt="Эльбрус" class="gallery-img"></a>
-            <a href="rock.html" class="gallery-img-2"><img src="images/2.jpg" alt="Дыхтау" class="gallery-img"></a>
-            <a href="rock.html" class="gallery-img-3"><img src="images/3.jpg" alt="Коштантау" class="gallery-img"></a>
-            <a href="rock.html" class="gallery-img-4"><img src="images/4.jpg" alt="Пик Пушкина" class="gallery-img"></a>
-            <a href="rock.html" class="gallery-img-5"><img src="images/5.jpg" alt="Джангитау" class="gallery-img"></a>
-            <a href="rock.html" class="gallery-img-6"><img src="images/6.jpg" alt="Шхара" class="gallery-img"></a>
+
+    <div class="container-fluid px-5 mt-3">
+    <div class="container-fluid px-5 mt-3">
+        <!-- Bootstrap Carousel -->
+        <div id="mountainCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+            <!-- Индикаторы -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mountainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mountainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mountainCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#mountainCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#mountainCarousel" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#mountainCarousel" data-bs-slide-to="5"></button>
+            </div>
+
+            <!-- Слайды -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="rock.html">
+                        <img src="images/1.jpg" class="d-block w-100 carousel-image" alt="Эльбрус">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Эльбрус</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="rock.html">
+                        <img src="images/2.jpg" class="d-block w-100 carousel-image" alt="Дыхтау">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Дыхтау</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="rock.html">
+                        <img src="images/3.jpg" class="d-block w-100 carousel-image" alt="Коштантау">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Коштантау</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="rock.html">
+                        <img src="images/4.jpg" class="d-block w-100 carousel-image" alt="Пик Пушкина">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Пик Пушкина</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="rock.html">
+                        <img src="images/5.jpg" class="d-block w-100 carousel-image" alt="Джангитау">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Джангитау</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="rock.html">
+                        <img src="images/6.jpg" class="d-block w-100 carousel-image" alt="Шхара">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Шхара</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Стрелки управления -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#mountainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon carousel-arrow-custom" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mountainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon carousel-arrow-custom" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
         </div>
-        <div class="topmenu">
-            <div class="topmenu-item">
-                <img src="images/7.jpg" alt="Мижирги" class="topmenu-img">
-                <h4>Мижирги</h4>
-                <div>Высота 5047 м <a href="rock.html">...</a></div>
+
+        <div class="row">
+            <div class="col-lg-2 col-md-12 mb-4">
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center mb-4">
+                    <img src="images/7.jpg" alt="Мижирги" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Мижирги</h6>
+                    <p class="small">Высота 5047 м, расположена в системие Большой Кавказ</p>
+                </a>
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center mb-4">
+                    <img src="images/8.jpg" alt="Казбек" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Казбек</h6>
+                    <p class="small">Высота 5032 м, расположена в системие Большой Кавказ</p>
+                </a>
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center mb-4">
+                    <img src="images/9.jpg" alt="Катын-Тау" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Катын-Тау</h6>
+                    <p class="small">Высота 5032 м, расположена в системие Большой Кавказ</p>
+                </a>
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center">
+                    <img src="images/10.jpg" alt="Шота Руставели" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Шота Руставели</h6>
+                    <p class="small">Высота 4859 м, расположена в системие Большой Кавказ</p>
+                </a>
             </div>
-            <div class="topmenu-item">
-                <img src="images/8.jpg" alt="Казбек" class="topmenu-img">
-                <h4>Казбек</h4>
-                <div>Высота 5032 м <a href="rock.html">...</a></div>
-            </div>
-            <div class="topmenu-item">
-                <img src="images/9.jpg" alt="Катын-Тау" class="topmenu-img">
-                <h4>Катын-Тау</h4>
-                <div>Высота 5032 м <a href="rock.html">...</a></div>
-            </div>
-            <div class="topmenu-item">
-                <img src="images/10.jpg" alt="Шота Руставели" class="topmenu-img">
-                <h4>Шота Руставели</h4>
-                <div>Высота 4859 м <a href="rock.html">...</a></div>
-            </div>
-            <div class="topmenu-item">
-                <img src="images/11.jpg" alt="Шота Руставели" class="topmenu-img">
-                <h4>Гестола</h4>
-                <div>Высота 4860 м <a href="rock.html">...</a></div>
-            </div>
-        </div>
-        <div class="vertical-cards">
-            <div class="article-item article-item-1">
-                <h3 class="article-title">Джангитау</h3>
-                <div class="article-content">
-                    Джангита́у[4] (карач.-балк. Джангы тау — «Новая гора»), или Джанга[4] (груз. ჯანღა) — горная вершина в центральной части Главного Кавказского хребта на границе России и Грузии. Высота главной вершины 5085 м[2]. Это пятая по высоте вершина Российской части Кавказа, и вторая в Грузии (после Шхары). В массиве Джангитау выделяют ещё две вершины: Западную (5058,8 м, 43°01′08″ N, 43°03′07″E), — именно она на картах генштаба обозначена как г. Джангитау, и Восточную (5033,6 м, 43°00′48″ N, 43°04′14″E), на тех же картах именуемая как Пик Пушкина, который находится в 6,5 км северо-восточнее в массиве Дыхтау[5]. Джангитау находится в центре 13-километрового горного массива, известного под названием Безенгийская стена и популярна в альпинизме. На вершину проложены маршруты 4Б-5А категории сложности[1], также через неё проходит маршрут «траверс Безенгийской стены» (5Б, зимний вариант — 6А).
-                    <div class="btn-container">
-                        <a href="rock.html" class="btn-link btn-link-right">Подробнее &raquo;</a>
+
+            <div class="col-lg-8 col-md-12 mb-4">
+                <div class="card mb-4 border-dark">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-3">Джангитау</h3>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="two-columns">
+                                    <p class="text-justify">
+                                        Джангита́у[4] (карач.-балк. Джангы тау — «Новая гора»), или Джанга[4] (груз. ჯანღა) — горная вершина в центральной части Главного Кавказского хребта на границе России и Грузии. Высота главной вершины 5085 м[2]. Это пятая по высоте вершина Российской части Кавказа, и вторая в Грузии (после Шхары). В массиве Джангитау выделяют ещё две вершины: Западную (5058,8 м, 43°01′08″ N, 43°03′07″E), — именно она на картах генштаба обозначена как г. Джангитау, и Восточную (5033,6 м, 43°00′48″ N, 43°04′14″E), на тех же картах именуемая как Пик Пушкина, который находится в 6,5 км северо-восточнее в массиве Дыхтау[5]. Джангитау находится в центре 13-километрового горного массива, известного под названием Безенгийская стена и популярна в альпинизме. На вершину проложены маршруты 4Б-5А категории сложности[1], также через неё проходит маршрут «траверс Безенгийской стены» (5Б, зимний вариант — 6А).
+                                    </p>
+                                    <div class="text-end mt-2">
+                                        <a href="rock.html" class="btn btn-primary btn-sm">Подробнее &raquo;</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="images/5.jpg" alt="Джангитау" class="img-fluid w-100">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <img src="images/5.jpg" alt="Джангитау" class="article-img">
-            </div>
-            <div class="article-item article-item-2">
-                <img src="images/6.jpg" alt="Шха́ра" class="article-img">
-                <h3 class="article-title">Шха́ра</h3>
-                <div class="article-content">
-                    Шха́ра (груз. შხარა — «полосатая», карач.-балк. ушхара) — горная вершина в центральной части Главного Кавказского (Водораздельного) хребта, является его высочайшей точкой, также высочайшая точка Грузии, также вторая по высоте гора Европы (при условии проведения границы между Европой и Азией по Главному Кавказскому хребту или южнее). Высота главной вершины — 5203 м, уточнена в 2010 году альпинистами Питером Шоном и Борисом Авдеевым с помощью приемника DGPS[2]. В массиве Шхары, также выделяют западную вершину — 5068,8 м (42°59′57″ N, 43°05′23″E)[3] (на картах генштаба[4] она ошибочно обозначена как главная) и восточную вершину — 4866,5 м (43°00′12″ N, 43°07′39″E).
-                    <div class="btn-container">
-                        <a href="rock.html" class="btn-link">Подробнее &raquo;</a>
+
+                <div class="card border-dark">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-3">Шха́ра</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/6-2.jpg" alt="Шха́ра" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                <p class="text-justify">
+                                    Шха́ра (груз. შხარა — «полосатая», карач.-балк. ушхара) — горная вершина в центральной части Главного Кавказского (Водораздельного) хребта, является его высочайшей точкой, также высочайшая точка Грузии, также вторая по высоте гора Европы (при условии проведения границы между Европой и Азией по Главному Кавказскому хребту или южнее). Высота главной вершины — 5203 м, уточнена в 2010 году альпинистами Питером Шоном и Борисом Авдеевым с помощью приемника DGPS[2]. В массиве Шхары, также выделяют западную вершину — 5068,8 м (42°59′57″ N, 43°05′23″E)[3] (на картах генштаба[4] она ошибочно обозначена как главная) и восточную вершину — 4866,5 м (43°00′12″ N, 43°07′39″E).
+                                </p>
+                                <div class="text-start mt-2">
+                                    <a href="rock.html" class="btn btn-primary btn-sm">Подробнее &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="horizontal-cards">
-            <div class="horizontal-item">
-                <img src="images/11.jpg" alt="Гестола" class="horizontal-img">
-                <h3 class="horizontal-title">Гестола</h3>
-                <div class="horizontal-content">
-                    Ге́стола (карач.-балк. Гестола, груз. გისტოლა) — одна из вершин Безенгийской стены главного Кавказского хребта, район Безенги. С горы стекает река Большой Черек<br>
-С севера вершина имеет характерную форму, красиво выделяясь чётким треугольником на контуре Безенгийской стены. В плане — пирамида с почти квадратным основанием, ориентированным под 45° к сторонам света.<br>
-На вершину (4860 м) описаны различные скально-ледовые маршруты от 3Б до 5Б, как фронтально из долины, так и траверсом части Безенгийской стены через пик Есенина (4310), Ляльвер.<br>
-Название горы отсылает к балкарскому личному имени Гестола.
-                    <div class="btn-container">
-                        <a href="rock.html" class="btn-link">Подробнее &raquo;</a>
-                    </div>
-                </div>
-            </div>
-            <div class="horizontal-item">
-                <h3 class="horizontal-title">Джимара</h3>
-                <div class="horizontal-content">
-                    Джимара́ (Джимарай-хох или Гимарай-хох, груз. ჯიმარა, осет. Джимарайы хох; устар. Колкай-хох) — гора на Хохском хребте в центральной части Большого Кавказа. Высота — 4780 м (вторая по высоте вершина Хохского хребта). Находится в 9 км к западу от вулкана Казбек. По вершине Джимары проходит государственная граница между Российской Федерацией и Республикой Грузия.<br>
-Вершинная часть Джимары на большей площади покрыта фирновыми полями. Со склонов горы спускается четыре ледника: на западном склоне — ледник Мидаграбин, на северном — ледник Колка, на южном — ледники Западный и Центральный Суатиси. С ледников и снежников на склонах Джимары берут начало реки Суатиси, Джимарадон и Тепидон — на южном склоне горы, Мидаграбиндон и Геналдон — на северном.
-                    <div class="btn-container btn-link-right">
-                        <a href="rock.html" class="btn-link">Подробнее &raquo;</a>
-                    </div>
-                </div>
-                <img src="images/12.jpg" alt="Гестола" class="horizontal-img">
+
+            <div class="col-lg-2 col-md-12 mb-4">
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center mb-4">
+                    <img src="images/11.jpg" alt="Гестола" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Гестола</h6>
+                    <p class="small">Высота 4860 м, расположена в системие Большой Кавказ</p>
+                </a>
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center mb-4">
+                    <img src="images/12.jpg" alt="Джимара" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Джимара</h6>
+                    <p class="small">Высота 4780 м, расположена в системие Большой Кавказ</p>
+                </a>
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center mb-4">
+                    <img src="images/13.jpg" alt="Ключевая Сопка" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Ключевская Сопка</h6>
+                    <p class="small">Высота 4750 м, расположена в системие Восточный хребет</p>
+                </a>
+                <a href="rock.html" class="text-decoration-none text-dark d-block text-center">
+                    <img src="images/14.jpg" alt="Уилпата" class="img-fluid mb-2" style="max-width: 70%; aspect-ratio: 1/1; object-fit: cover;">
+                    <h6 class="fw-bold">Уилпата</h6>
+                    <p class="small">Высота 4646 м, расположена в системие Большой Кавказ</p>
+                </a>
             </div>
         </div>
 
-        <hr>
-        <a href="https://edwardcode.net/">Эдуард Ильин</a>, Б9123-09.03.04
+        <hr class="my-4">
+        <div class="text-center mb-3">
+            <a href="https://edwardcode.net/">Эдуард Ильин</a>, Б9123-09.03.04
+        </div>
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
