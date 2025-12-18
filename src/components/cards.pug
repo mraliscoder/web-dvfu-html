@@ -2,16 +2,14 @@ mixin articleCard(article, variant)
   .article(class=`article--${variant}`)
     if variant === 'img-left'
       h3.article__title= article.title
-      .article__content
-        | !{article.content}
+      .article__content= article.content
         .article__btn-container.article__btn-container--right
           a.btn-link(href=article.link) Подробнее &raquo;
       img.article__img(src=article.image alt=article.title)
     else
       img.article__img(src=article.image alt=article.title)
       h3.article__title= article.title
-      .article__content
-        | !{article.content}
+      .article__content= article.content
         .article__btn-container
           a.btn-link(href=article.link) Подробнее &raquo;
 
@@ -20,14 +18,12 @@ mixin horizontalCard(card, variant)
     if variant === 'img-left'
       img.horizontal-card__img(src=card.image alt=card.title)
       h3.horizontal-card__title= card.title
-      .horizontal-card__content
-        | !{card.content}
+      .horizontal-card__content= card.content
         .horizontal-card__btn-container
           a.btn-link(href=card.link) Подробнее &raquo;
     else
       h3.horizontal-card__title= card.title
-      .horizontal-card__content
-        | !{card.content}
+      .horizontal-card__content= card.content
         .horizontal-card__btn-container.horizontal-card__btn-container--right
           a.btn-link(href=card.link) Подробнее &raquo;
       img.horizontal-card__img(src=card.image alt=card.title)
