@@ -37,31 +37,25 @@ mixin filterForm()
       button.filter-form__button Искать
       button.filter-form__button.filter-form__button--reset(type="reset") Сбросить
 
-mixin sortForm()
+mixin sortOptions(level, titles)
+  p.sort-form__field
+    label.sort-form__label
+      | #{level} уровень:
+      select.sort-form__select(name=`sort_${levelNum}`)
+        option(value="") (нет)
+        each option in titles
+          option(value=option.id)= option.name
+    label.sort-form__label
+      input.sort-form__checkbox(type="checkbox" name=`sort_${levelNum}_desc`)
+      |  по убыванию?
+
+mixin sortForm(titles)
   form.sort-form
     h3.sort-form__title Сортировка
 
-    -
-      var sortOptions = [
-        {value: "", text: "-- нет --"},
-        {value: "name", text: "Название"},
-        {value: "height", text: "Высота"},
-        {value: "system", text: "Система"},
-        {value: "type", text: "Тип"},
-        {value: "region", text: "Регион"}
-      ]
-
     each level in ["Первый", "Второй", "Третий"]
       - var levelNum = level === "Первый" ? "1" : (level === "Второй" ? "2" : "3")
-      p.sort-form__field
-        label.sort-form__label
-          | #{level} уровень:
-          select.sort-form__select(name=`sort_${levelNum}`)
-            each option in sortOptions
-              option(value=option.value)= option.text
-        label.sort-form__label
-          input.sort-form__checkbox(type="checkbox" name=`sort_${levelNum}_desc`)
-          |  по убыванию?
+      +sortOptions(level, titles)
 
     p.sort-form__actions
       button.sort-form__button Сортировать

@@ -9,6 +9,14 @@ block head
 
 block content
   -
+    var titles = [
+      { name: "Название вершины", id: "name" },
+      { name: "Высота (м)", id: "height" },
+      { name: "Горная система", id: "system" },
+      { name: "Тип вершины", id: "type" },
+      { name: "Регион России", id: "region" }
+    ]
+  -
     var mountains = [
       {rank: 1, name: "Эльбрус", height: 5642, system: "Большой Кавказ", type: "Вулкан", region: "Кабардино-Балкария"},
       {rank: 2, name: "Дыхтау", height: 5204, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
@@ -68,11 +76,11 @@ block content
 
   +filterForm()
 
-  +sortForm()
+  +sortForm(titles)
 
   hr.table-page__divider
 
-  +mountainsTable(mountains)
+  +mountainsTable(titles, mountains)
 
   hr.table-page__divider
 

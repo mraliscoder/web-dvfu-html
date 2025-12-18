@@ -1,19 +1,12 @@
-mixin mountainsTable(mountains)
+mixin mountainsTable(titles, mountains)
   table.mountains-table(border="1" cellpadding="7" cellspacing="0" width="950")
     thead.mountains-table__head
       tr.mountains-table__row
         th.mountains-table__header Место
-        th.mountains-table__header Название вершины
-        th.mountains-table__header Высота (м)
-        th.mountains-table__header Горная система
-        th.mountains-table__header Тип вершины
-        th.mountains-table__header Регион России
+        each title in titles
+          th.mountains-table__header= title.name
     tbody.mountains-table__body
       each mountain in mountains
         tr.mountains-table__row
-          td.mountains-table__cell= mountain.rank
-          td.mountains-table__cell= mountain.name
-          td.mountains-table__cell= mountain.height
-          td.mountains-table__cell= mountain.system
-          td.mountains-table__cell= mountain.type
-          td.mountains-table__cell= mountain.region
+        each val in mountain
+          td.mountains-table__cell= val

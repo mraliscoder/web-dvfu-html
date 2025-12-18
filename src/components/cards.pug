@@ -1,5 +1,5 @@
 mixin articleCard(article, variant)
-  .article(class=`article--${variant}`)
+  .article(class=`article_${variant}`)
     if variant === 'img-left'
       h3.article__title= article.title
       .article__content= article.content
@@ -14,7 +14,7 @@ mixin articleCard(article, variant)
           a.btn-link(href=article.link) Подробнее &raquo;
 
 mixin horizontalCard(card, variant)
-  .horizontal-card(class=`horizontal-card--${variant}`)
+  .horizontal-card(class=`horizontal-card_${variant}`)
     if variant === 'img-left'
       img.horizontal-card__img(src=card.image alt=card.title)
       h3.horizontal-card__title= card.title

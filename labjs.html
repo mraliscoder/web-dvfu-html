@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab JS</title>
+</head>
+<body>
+    <script>
+        function uniqueNumbers() {
+            const used = [];
+            for (let num of arguments) {
+                if (isNaN(parseFloat(num)) || !isFinite(num)) {
+                    console.warn(`${num} is not an integer`);
+                    continue;
+                }
+
+                if (!num.includes('.')) {
+                    continue;
+                }
+
+                let unique = true;
+                for (alreadyUsed of used) {
+                    if (Math.abs(alreadyUsed - num) < 0.00001) {
+                        unique = false;
+                        break;
+                    }
+                }
+                if (unique) {
+                    used.push(num);
+                }
+            }
+
+            return used
+                .join(", ");
+        }
+    </script>
+</body>
+</html>
