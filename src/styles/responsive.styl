@@ -1,6 +1,6 @@
 @import 'variables'
 
-@media screen and (max-width $breakpoint-mobile)
+@media screen and (max-width 600px)
   .gallery
     display flex
     flex-direction column
@@ -8,12 +8,12 @@
   .topmenu
     display flex
     flex-direction column
-    gap $spacing-md
+    gap 10px
 
   .article
     display flex
     flex-direction column
-    gap $spacing-md
+    gap 10px
 
     &--img-left
     &--img-right
@@ -22,7 +22,7 @@
   .horizontal-cards
     display flex
     flex-direction column
-    gap $spacing-md
+    gap 10px
     width 100%
 
   .horizontal-card
@@ -35,7 +35,7 @@
 
     &__item
       &--active
-        border-bottom 3px double $color-border
+        border-bottom 3px double #b9b9b9
 
   .vertical-cards
     width 100%
@@ -45,4 +45,4 @@
 
     &__cell
     &__header
-      padding $spacing-xs
+      padding 3px
