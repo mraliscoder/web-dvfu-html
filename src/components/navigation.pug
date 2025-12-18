@@ -1,0 +1,15 @@
+mixin navigation(activePage)
+  -
+    var navItems = [
+      {name: "Главная", url: "index.html", id: "index"},
+      {name: "Список гор", url: "table.html", id: "table"},
+      {name: "О горе", url: "rock.html", id: "rock"},
+      {name: "Картинка", url: "images/1.jpg", id: "image"}
+    ]
+
+  nav.nav
+    each item in navItems
+      a.nav__item(
+        href=item.url
+        class=(item.id === activePage ? 'nav__item--active' : '')
+      )= item.name

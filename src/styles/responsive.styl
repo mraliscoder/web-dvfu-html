@@ -1,0 +1,47 @@
+@media screen and (max-width 600px)
+  .gallery
+    display flex
+    flex-direction column
+
+  .topmenu
+    display flex
+    flex-direction column
+    gap 10px
+
+  .article
+    display flex
+    flex-direction column
+    gap 10px
+
+    &_img-left
+    &_img-right
+      grid-template-columns 1fr
+
+  .horizontal-cards
+    display flex
+    flex-direction column
+    gap 10px
+    width 100%
+
+  .horizontal-card
+    &__img
+      height 200px
+
+  .nav
+    display grid
+    grid-template-columns 1fr 1fr
+
+    &__item
+      &--active
+        border-bottom 3px double #b9b9b9
+        border-top 3px double #b9b9b9
+
+  .vertical-cards
+    width 100%
+
+  .mountains-table
+    font-size 0.8em
+
+    &__cell
+    &__header
+      padding 3px

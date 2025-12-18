@@ -1,0 +1,27 @@
+include ./navigation
+
+-
+  var author = {
+    name: "Эдуард Ильин",
+    group: "Б9123-09.03.04",
+    website: "https://edwardcode.net/"
+  }
+
+doctype html
+html(lang="ru")
+  head
+    block head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="css/main.css")
+    title= pageTitle || "Горы"
+  body
+    block navigation
+      +navigation(activePage)
+
+    .container
+      block content
+
+      hr
+      a(href=author.website)= author.name
+      | , #{author.group}

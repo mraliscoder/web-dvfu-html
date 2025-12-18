@@ -1,0 +1,85 @@
+mixin filterForm()
+  form.filter-form
+    h3.filter-form__title Фильтр
+
+    p.filter-form__field
+      label.filter-form__label
+        | Название:
+        input.filter-form__input(type="text" name="name")
+
+    p.filter-form__field
+      label.filter-form__label
+        | Высота от:
+        input.filter-form__input(type="number" name="height_from" placeholder="От")
+      label.filter-form__label
+        |  до:
+        input.filter-form__input(type="number" name="height_to" placeholder="До")
+
+    p.filter-form__field
+      label.filter-form__label
+        | Горная система:
+        input.filter-form__input(type="text" name="system")
+
+    p.filter-form__field
+      label.filter-form__label
+        | Тип вершины:
+        select.filter-form__select(name="type")
+          option(value="1") Вулкан
+          option(value="2") Горный пик
+          option(value="3") Ледниковая вершина
+
+    p.filter-form__field
+      label.filter-form__label
+        | Регион:
+        input.filter-form__input(type="text" name="region")
+
+    p.filter-form__actions
+      button.filter-form__button Искать
+      button.filter-form__button.filter-form__button--reset(type="reset") Сбросить
+
+mixin sortOptions(level, titles)
+  p.sort-form__field
+    label.sort-form__label
+      | #{level} уровень:
+      select.sort-form__select(name=`sort_${levelNum}`)
+        option(value="") (нет)
+        each option in titles
+          option(value=option.id)= option.name
+    label.sort-form__label
+      input.sort-form__checkbox(type="checkbox" name=`sort_${levelNum}_desc`)
+      |  по убыванию?
+
+mixin sortForm(titles)
+  form.sort-form
+    h3.sort-form__title Сортировка
+
+    each level in ["Первый", "Второй", "Третий"]
+      - var levelNum = level === "Первый" ? "1" : (level === "Второй" ? "2" : "3")
+      +sortOptions(level, titles)
+
+    p.sort-form__actions
+      button.sort-form__button Сортировать
+      button.sort-form__button.sort-form__button--reset(type="reset") Сбросить
+
+mixin chartForm()
+  form.chart-form
+    h3.chart-form__title График
+
+    p.chart-form__field
+      label.chart-form__label
+        | Группировка:
+        select.chart-form__select(name="group_by")
+          option(value="system") Горная система
+          option(value="type") Тип вершины
+          option(value="region" selected) Регион
+
+    p.chart-form__field
+      label.chart-form__label
+        input.chart-form__checkbox(type="checkbox" name="graph_min" checked)
+        |  Минимальная высота
+      label.chart-form__label
+        input.chart-form__checkbox(type="checkbox" name="graph_max" checked)
+        |  Максимальная высота
+
+    p.chart-form__actions
+      button.chart-form__button Построить

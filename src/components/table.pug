@@ -1,0 +1,12 @@
+mixin mountainsTable(titles, mountains)
+  table.mountains-table(border="1" cellpadding="7" cellspacing="0" width="950")
+    thead.mountains-table__head
+      tr.mountains-table__row
+        th.mountains-table__header Место
+        each title in titles
+          th.mountains-table__header= title.name
+    tbody.mountains-table__body
+      each mountain in mountains
+        tr.mountains-table__row
+        each val in mountain
+          td.mountains-table__cell= val

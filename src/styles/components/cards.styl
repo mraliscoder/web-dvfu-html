@@ -1,0 +1,75 @@
+.vertical-cards
+  max-width 900px
+  margin 0 auto
+
+.article
+  background-color #F8BBD0
+  margin-bottom 20px
+  padding 20px
+  border-radius 20px
+  display grid
+  gap 5px
+  align-items center
+  transition transform 0.3s ease, box-shadow 0.3s ease
+
+  &:hover
+    transform translateY(-5px)
+    box-shadow 0 5px 15px rgba(0, 0, 0, 0.2)
+
+  &_img-left
+    grid-template-columns 100px 1fr 200px
+
+  &_img-right
+    grid-template-columns 200px 100px 1fr
+
+  &__img
+    width 100%
+    border-radius 20px
+
+  &__content
+    text-align justify
+
+  &__btn-container
+    text-align left
+
+    &--right
+      text-align right
+
+.horizontal-cards
+  width 80%
+  margin 0 auto
+  display grid
+  grid-template-columns 1fr 1fr
+  gap 10%
+
+.horizontal-card
+  background-color #BCAAA4
+  padding 10px
+  border-radius 20px
+  display flex
+  flex-direction column
+  gap 5px
+  transition transform 0.3s ease, box-shadow 0.3s ease
+
+  &:hover
+    transform translateY(-5px)
+    box-shadow 0 5px 15px rgba(0, 0, 0, 0.2)
+
+  &__img
+    height 150px
+    width 100%
+    object-fit cover
+    border-radius 20px
+
+  &__title
+    text-align center
+
+  &__content
+    text-align justify
+    flex 1
+
+  &__btn-container
+    text-align left
+
+    &--right
+      text-align right
