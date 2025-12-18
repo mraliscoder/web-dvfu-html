@@ -1,0 +1,48 @@
+@import 'variables'
+
+@media screen and (max-width $breakpoint-mobile)
+  .gallery
+    display flex
+    flex-direction column
+
+  .topmenu
+    display flex
+    flex-direction column
+    gap $spacing-md
+
+  .article
+    display flex
+    flex-direction column
+    gap $spacing-md
+
+    &--img-left
+    &--img-right
+      grid-template-columns 1fr
+
+  .horizontal-cards
+    display flex
+    flex-direction column
+    gap $spacing-md
+    width 100%
+
+  .horizontal-card
+    &__img
+      height 200px
+
+  .nav
+    display grid
+    grid-template-columns 1fr 1fr
+
+    &__item
+      &--active
+        border-bottom 3px double $color-border
+
+  .vertical-cards
+    width 100%
+
+  .mountains-table
+    font-size 0.8em
+
+    &__cell
+    &__header
+      padding $spacing-xs

@@ -1,0 +1,79 @@
+extends ../components/layout
+
+include ../components/forms
+include ../components/table
+
+block head
+  - var pageTitle = "Список гор"
+  - var activePage = "table"
+
+block content
+  -
+    var mountains = [
+      {rank: 1, name: "Эльбрус", height: 5642, system: "Большой Кавказ", type: "Вулкан", region: "Кабардино-Балкария"},
+      {rank: 2, name: "Дыхтау", height: 5204, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 3, name: "Коштантау", height: 5152, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 4, name: "Пик Пушкина", height: 5100, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 5, name: "Джангитау", height: 5085, system: "Большой Кавказ", type: "Ледниковая вершина", region: "Кабардино-Балкария"},
+      {rank: 6, name: "Шхара", height: 5068, system: "Большой Кавказ", type: "Ледниковая вершина", region: "Кабардино-Балкария"},
+      {rank: 7, name: "Мижирги", height: 5047, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 8, name: "Казбек", height: 5032, system: "Большой Кавказ", type: "Вулкан", region: "Северная Осетия"},
+      {rank: 9, name: "Катын-Тау", height: 4970, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 10, name: "Шота Руставели", height: 4859, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 11, name: "Гестола", height: 4860, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 12, name: "Джимара", height: 4780, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 13, name: "Ключевская Сопка", height: 4750, system: "Восточный хребет", type: "Вулкан", region: "Камчатский край"},
+      {rank: 14, name: "Уилпата", height: 4646, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 15, name: "Саухох", height: 4636, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 16, name: "Кукуртли-Колбаши", height: 4624, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 17, name: "Майлихох", height: 4597, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 18, name: "Камень", height: 4575, system: "Восточный хребет", type: "Вулкан", region: "Камчатский край"},
+      {rank: 19, name: "Белуха", height: 4509, system: "Алтайские горы", type: "Горный пик", region: "Республика Алтай"},
+      {rank: 20, name: "Саллыннгантау", height: 4507, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 21, name: "Тебулосмта", height: 4492, system: "Большой Кавказ", type: "Горный пик", region: "Чечня"},
+      {rank: 22, name: "Суган", height: 4489, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 23, name: "Базардюзю", height: 4466, system: "Большой Кавказ", type: "Горный пик", region: "Дагестан"},
+      {rank: 24, name: "Чанчахи", height: 4461, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 25, name: "Донгузорун-Чегет-Карабаши", height: 4454, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 26, name: "Шан", height: 4451, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 27, name: "Тепли", height: 4431, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 28, name: "Чатынтау", height: 4411, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 29, name: "Адай-Хох", height: 4408, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 30, name: "Сонгути", height: 4405, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 31, name: "Тютюбаши", height: 4404, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 32, name: "Вологата", height: 4396, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 33, name: "Караугом", height: 4364, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 34, name: "Адырсубаши", height: 4349, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 35, name: "Лабода", height: 4313, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 36, name: "Бачахи", height: 4291, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 37, name: "Диклосмта", height: 4285, system: "Большой Кавказ", type: "Горный пик", region: "Чечня"},
+      {rank: 38, name: "Пик Кавказа", height: 4280, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 39, name: "Джорашты", height: 4278, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 40, name: "Бжедух", height: 4271, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 41, name: "Комито", height: 4261, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 42, name: "Суллуколбаши", height: 4251, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 43, name: "Каяартыбаши", height: 4250, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 44, name: "Башилтау", height: 4248, system: "Большой Кавказ", type: "Горный пик", region: "Кабардино-Балкария"},
+      {rank: 45, name: "Зейгаланхох", height: 4244, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 46, name: "Заромаг", height: 4203, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 47, name: "Дончентыхох", height: 4192, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 48, name: "Калота", height: 4182, system: "Большой Кавказ", type: "Горный пик", region: "Северная Осетия"},
+      {rank: 49, name: "Доносмта", height: 4179, system: "Большой Кавказ", type: "Горный пик", region: "Чечня"},
+      {rank: 50, name: "Таван-Богдо-Ула", height: 4082, system: "Алтайские горы", type: "Горный пик", region: "Республика Алтай"},
+      {rank: 51, name: "Плоская Ближняя", height: 4057, system: "Восточный хребет", type: "Вулкан", region: "Камчатский край"}
+    ]
+
+  hr.table-page__divider
+  h1.table-page__title Список гор
+
+  +filterForm()
+
+  +sortForm()
+
+  hr.table-page__divider
+
+  +mountainsTable(mountains)
+
+  hr.table-page__divider
+
+  +chartForm()

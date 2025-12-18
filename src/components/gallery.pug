@@ -1,0 +1,21 @@
+mixin gallery(items)
+  .gallery
+    each item, index in items
+      a.gallery__item(
+        href=item.link
+        class=`gallery__item--${item.area}`
+      )
+        img.gallery__img(src=item.image alt=item.name)
+
+mixin topMenuItem(item)
+  .topmenu__item
+    img.topmenu__img(src=item.image alt=item.name)
+    h4.topmenu__title= item.name
+    .topmenu__text
+      | Высота #{item.height}
+      a(href=item.link) ...
+
+mixin topMenu(items)
+  .topmenu
+    each item in items
+      +topMenuItem(item)

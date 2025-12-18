@@ -1,0 +1,68 @@
+@import '../variables'
+@import '../mixins'
+
+.gallery
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  grid-template-areas "pic1 . pic2" "pic1 pic3 pic2" "pic4 pic3 pic5" "pic4 pic6 pic5"
+  margin-bottom $spacing-lg
+  grid-template-rows repeat(4, 60px)
+
+  &__item
+    display block
+
+    &--pic1
+      grid-area pic1
+
+    &--pic2
+      grid-area pic2
+
+    &--pic3
+      grid-area pic3
+
+    &--pic4
+      grid-area pic4
+
+    &--pic5
+      grid-area pic5
+
+    &--pic6
+      grid-area pic6
+
+  &__img
+    height 100%
+    width 100%
+    object-fit cover
+
+.topmenu
+  max-width $container-max-width
+  margin 0 auto
+  display flex
+  margin-bottom $spacing-lg
+  align-items center
+  justify-content space-between
+
+  &__item
+    text-align center
+
+  &__img
+    width 90px
+    aspect-ratio 1/1
+    border-radius $radius-lg
+    transition transform 0.3s ease
+
+    &:hover
+      transform scale(1.1)
+
+  &__title
+    margin $spacing-sm 0
+
+  &__text
+    font-size 0.9em
+
+    a
+      color $color-text
+      text-decoration none
+
+      &:hover
+        color $color-primary

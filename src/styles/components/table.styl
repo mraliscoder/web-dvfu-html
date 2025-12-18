@@ -1,0 +1,39 @@
+@import '../variables'
+@import '../mixins'
+
+.table-page
+  &__title
+    margin-bottom $spacing-md
+
+  &__divider
+    margin $spacing-lg 0
+
+.mountains-table
+  width 100%
+  border-collapse collapse
+  margin $spacing-lg 0
+
+  &__head
+    background-color #f2f2f2
+
+  &__header
+    padding 7px
+    text-align left
+    border 1px solid $color-border
+    font-weight bold
+
+  &__body
+    tr
+      &:nth-child(even)
+        background-color #f9f9f9
+
+      &:hover
+        background-color #e8f4f8
+        transition background-color 0.3s ease
+
+  &__row
+    border 1px solid $color-border
+
+  &__cell
+    padding 7px
+    border 1px solid $color-border

@@ -1,0 +1,78 @@
+@import '../variables'
+@import '../mixins'
+
+.vertical-cards
+  max-width $vertical-cards-max-width
+  margin 0 auto
+
+.article
+  background-color $color-bg-pink
+  margin-bottom $spacing-lg
+  padding $spacing-lg
+  border-radius $radius-md
+  display grid
+  gap $spacing-sm
+  align-items center
+  transition transform 0.3s ease, box-shadow 0.3s ease
+
+  &:hover
+    transform translateY(-5px)
+    box-shadow 0 5px 15px rgba(0, 0, 0, 0.2)
+
+  &--img-left
+    grid-template-columns 100px 1fr 200px
+
+  &--img-right
+    grid-template-columns 200px 100px 1fr
+
+  &__img
+    width 100%
+    border-radius $radius-md
+
+  &__content
+    text-align justify
+
+  &__btn-container
+    text-align left
+
+    &--right
+      text-align right
+
+.horizontal-cards
+  width $horizontal-cards-width
+  margin 0 auto
+  display grid
+  grid-template-columns 1fr 1fr
+  gap 10%
+
+.horizontal-card
+  background-color $color-bg-brown
+  padding $spacing-md
+  border-radius $radius-md
+  display flex
+  flex-direction column
+  gap $spacing-sm
+  transition transform 0.3s ease, box-shadow 0.3s ease
+
+  &:hover
+    transform translateY(-5px)
+    box-shadow 0 5px 15px rgba(0, 0, 0, 0.2)
+
+  &__img
+    height 150px
+    width 100%
+    object-fit cover
+    border-radius $radius-md
+
+  &__title
+    text-align center
+
+  &__content
+    text-align justify
+    flex 1
+
+  &__btn-container
+    text-align left
+
+    &--right
+      text-align right
