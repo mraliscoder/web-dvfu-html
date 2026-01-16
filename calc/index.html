@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Калькулятор комплексных чисел</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h2>Калькулятор комплексных чисел</h2>
+
+  <form id="form" method="post" action="#">
+    <div class="controls">
+        <select id="formSelect" name="type">
+            <option value="alg">Алгебраическая</option>
+            <option value="exp">Показательная</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col">
+        <h3>z₁</h3>
+        <div id="z1xField">
+            <label id="z1xLabel" for="z1x">a</label>
+            <input id="z1x" type="text" name="z1x">
+            <div class="err-msg" id="z1xErr"></div>
+        </div>
+
+        <div id="z1yField">
+            <label id="z1yLabel" for="z1y">b</label>
+            <input id="z1y" type="text" name="z1y">
+            <div class="err-msg" id="z1yErr"></div>
+        </div>
+        </div>
+
+        <div class="col">
+        <h3>z₂</h3>
+        <div id="z2xField">
+            <label id="z2xLabel" for="z2x">a</label>
+            <input id="z2x" type="text" name="z2x">
+            <div class="err-msg" id="z2xErr"></div>
+        </div>
+
+        <div id="z2yField">
+            <label id="z2yLabel" for="z2y">b</label>
+            <input id="z2y" type="text" name="z2y">
+            <div class="err-msg" id="z2yErr"></div>
+        </div>
+        </div>
+    </div>    
+
+    <div class="ops">
+        <label><input name="ops_sum" type="checkbox" id="opAdd"> сумма</label>
+        <label><input name="ops_sub" type="checkbox" id="opSub"> разность</label>
+        <label><input name="ops_mul" type="checkbox" id="opMul"> произведение</label>
+        <span id="opsHint" style="color:#d00; display:none;">Выберите хотя бы одну операцию</span>
+    </div>
+
+    <div class="controls">
+        <button id="showBtn" type="button">Показать</button>
+        <button id="calcBtn" type="submit">Вычислить</button>
+        <button id="clearBtn" type="reset">Очистить</button>
+    </div>
+
+    <h3>Результаты</h3>
+    <div id="resAddLine" class="hidden">Сумма: <span id="resAdd"></span></div>
+    <div id="resSubLine" class="hidden">Разность: <span id="resSub"></span></div>
+    <div id="resMulLine" class="hidden">Произведение: <span id="resMul"></span></div>
+
+    <div class="row" style="margin-top:12px;">
+        <div class="col" id="AlgBox">
+            <b>Алгебраическая форма</b><br>
+            <img src="alg.png" alt="Алгебраическая форма">
+        </div>
+
+        <div class="col hidden" id="ExpBox">
+            <b>Показательная форма</b><br>
+            <img src="polar.png" alt="Показательная форма">
+        </div>
+    </div>
+
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>

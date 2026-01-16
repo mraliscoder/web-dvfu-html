@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function() {
+            const expandMatrix = (oldMatrix, n) => {
+                const addSize = Math.floor(n/2);
+                let matrix = [];
+                for (let i = 0; i < n + addSize*2; i++) {
+                    let tempMatrix = [];
+                    for (let j = 0; j < n + addSize * 2; j++) {
+                        if (i >= addSize && j >= addSize && i < addSize+n && j < addSize+n) {
+                            tempMatrix.push(oldMatrix[i-addSize][j-addSize]);
+                        } else {
+                            tempMatrix.push(' ');
+                        }
+                    }
+                    matrix.push(tempMatrix);
+                }
+                return matrix;
+            }
+            const moveMatrix = (oldMatrix, n) => {
+                const addSize = Math.floor(n / 2);
+                const fullSize = addSize * 2 + n;
+
+                const matrix = oldMatrix;
+                const c = Math.floor(fullSize / 2);
+                const radius = addSize * 2;
+
+                const x0 = addSize, x1 = addSize + n - 1;
+                const y0 = addSize, y1 = addSize + n - 1;
+
+                for (let y = 0; y < fullSize; y++) {
+                    for (let x = 0; x < fullSize; x++) {
+                        if (x >= x0 && x <= x1 &&
+                            y >= y0 && y <= y1) continue;
+
+                        const d = Math.abs(x - c) + Math.abs(y - c);
+
+                        if (d <= radius && d % 2 === 0) {
+                            if (x < addSize && y > addSize && y < addSize+n) {
+                                matrix[y][x] = matrix[y][x+n];
+                                matrix[y][x+n] = ' ';
+                            }
+                            if (x >= addSize+n && y > addSize && y < addSize+n) {
+                                matrix[y][x] = matrix[y][x-n];
+                                matrix[y][x-n] = ' ';
+                            }
+                            if (y < addSize && x > addSize && x < addSize + n) {
+                                matrix[y][x] = matrix[y+n][x];
+                                matrix[y+n][x] = ' ';
+                            }
+                            if (y >= addSize+n && x > addSize && x < addSize + n) {
+                                matrix[y][x] = matrix[y-n][x];
+                                matrix[y-n][x] = ' ';
+                            }
+                        }
+                    }
+                }
+
+                return matrix;
+            };
+
+            const readMatrix = (matrix, n, variant) => {
+                const oldSize = matrix.length;
+
+                let newMatrix = [];
+                for (let i = 0; i < n; i++) {
+                    let tempMatrix = [];
+                    for (let j = 0; j < n; j++) {
+                        tempMatrix.push(' ');
+                    }
+                    newMatrix.push(tempMatrix);
+                }
+
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j < n; j++) {
+                        let y = i+j;
+                        let x = Math.floor(oldSize / 2) + j - i;
+
+                        let newX = x;
+                        let newY = y;
+                        if (variant === 2) {
+                            newX = oldSize - 1 - y;
+                            newY = x;
+                        }
+                        if (variant === 3) {
+                            newX = oldSize - 1 - x;
+                            newY = oldSize - 1 - y;
+                        }
+                        if (variant === 4) {
+                            newX = y;
+                            newY = oldSize - 1 - x;
+                        }
+                        newMatrix[i][j] = matrix[newY][newX];
+                    }
+                }
+
+                let message = '';
+                for (let i = 0; i < n; i++) {
+                    for(let j = 0; j < n; j++) {
+                        message += newMatrix[i][j];
+                    }
+                }
+
+                console.log(`Вариант ${variant}: ${message}`);
+            };
+
+            const message = 'че______рбьеь_,_о_ш_ч_х_г,е_е_и__отеж_г_от_чм_у_нхвооар_ж___мз__лоьыа__дотттсв_д_';
+            n = Math.ceil(Math.sqrt(message.length));
+            console.log(`Длина: ${message.length}, квадрат = ${n}`);
+            
+            const matrix = [];
+            let currentMessageIndex = -1;
+            for (let i = 0; i < n; i++) {
+                const tempMatrix = [];
+                for (let j = 0; j < n; j++) {
+                    currentMessageIndex++;
+                    if (currentMessageIndex < message.length) {
+                        tempMatrix[j] = message[currentMessageIndex] === "_" ? " " : message[currentMessageIndex];
+                    }
+                }
+                matrix.push(tempMatrix);
+            }
+
+            const matrixEpanded = expandMatrix(matrix, n);
+            const movedMatrix = moveMatrix(matrixEpanded, n);
+            
+            console.table(movedMatrix);
+            readMatrix(movedMatrix, n, 1);
+            readMatrix(movedMatrix, n, 2);
+            readMatrix(movedMatrix, n, 3);
+            readMatrix(movedMatrix, n, 4);
+        })();
+    </script>
+</body>
+</html>

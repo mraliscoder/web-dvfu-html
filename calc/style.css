@@ -1,0 +1,60 @@
+body {
+    font-family: Inter, sans-serif;
+    margin: 16px;
+}
+.row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+.col {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+h3 {
+    padding: 0;
+    margin: 0;
+}
+.controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin-top: 8px;
+}
+input, select, button {
+    padding: 6px;
+}
+.ops {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+.error input {
+    border: 2px solid #d00;
+}
+.err-msg {
+    color: #d00;
+    font-size: 12px;
+    display: none;
+}
+.error .err-msg {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+@media (max-width: 500px) {
+    .row {
+        flex-direction: column;
+    }
+    img {
+        width: 100%;
+    }
+}

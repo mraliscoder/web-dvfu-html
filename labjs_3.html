@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {display: none;}
+    </style>
+</head>
+<body>
+    <input type="button" value="Изменить страницу" onclick="changePage(70)">
+    <h3>Языки программирования</h3>
+    <div>Python</div>
+    <div>C</div>
+    <div><a href="#">Java</a></div>
+    <h3>История создания</h3>
+    <div>
+        <p>Python создан в 1989-1991 годах голландским программистом Гвидо ван Россумом.</p>
+        <p>C разработан в 1969-1973 годах сотрудником Bell Labs Деннисом Ритчи.</p>
+        <p>Java разработан в 1990-1996 годах канадским программистом Джеймсом Гослингом.</p>
+        <p>JavaScript разработан в 1996 году, автор - американский программист Брендан Айк.</p>
+        <p>Prolog разработан в 1972 году, автор - французский программист Ален Колмероэ.</p>
+        <p>Ruby разработан в 1993-1995 одах, автор - японский программист Юкихиро Мацумото.</p>
+    </div>
+
+
+    <script>
+        function changePage(n) {
+            document.querySelectorAll("p").forEach(el => {
+                const text = el.innerText;
+                let nextSpace = 0;
+                if (text.length > n) {
+                    for (let i = 0; i < n; i++) {
+                        if (text.charAt(i) == ' ') {
+                            nextSpace = i;
+                        }
+                    }
+
+                    el.innerHTML = `${text.substring(0, nextSpace)}<span class="hide">${text.substring(nextSpace)}</span>...`;
+                }            
+            })
+        }
+    </script>
+</body>
+</html>
