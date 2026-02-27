@@ -1,0 +1,27 @@
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#list {
+    border-collapse: collapse;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+}
+
+#list th,
+#list td {
+    padding: 8px 12px;
+    border: 1px solid #ffffff;
+}
+
+#list > tr th {
+    background: #cfcfcf;
+    font-weight: bold;
+}
+
+#list tbody tr {
+    background: #e6e6e6;
+}
