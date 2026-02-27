@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Гора: Эльбрус</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="table.html">Список гор</a></li>
-    </ul>
-    <h1>Эльбрус</h1>
-    <hr>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Горы России</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="table.html">Список гор</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="rock.html">О горе</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="images/1.jpg">Картинка</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <img src="images/1.jpg" alt="Эльбрус">
-    <p>Эльбру́с (раннее[5] название Эльборус[6]) — стратовулкан[7] на Кавказе[8] (5642 метра над уровнем моря) — самая высокая горная вершина России и Европы при условии проведения границы между Европой и Азией по Главному Кавказскому хребту или южнее (в иных случаях высочайшей вершиной Европы считается альпийская гора Монблан).</p>
-    <p>Эльбрус включён в список высочайших вершин частей света «Семь вершин». Стекающая с его склонов талая ледниковая вода питает одни из наиболее крупных рек Северного Кавказа: Кубань, Малку и Баксан. За счёт хорошо развитой транспортной и сопутствующей инфраструктуры Эльбрус и прилегающие к нему районы очень популярны в рекреационном, спортивном, туристическом и альпинистском плане. На седловине Эльбруса (5416 м), разделяющей его Восточную (5621 метров) и Западную (5642 метров) вершины, расположен самый высокогорный приют Кавказа.</p>
-    <p>Эльбрус входит в список десяти вершин Российской Федерации для присвоения звания «Снежный барс России».</p>
-    
-    <hr>
-    <a href="https://edwardcode.net/">Эдуард Ильин</a>, Б9123-09.03.04
+    <div class="container-fluid px-5 mt-3">
+        <h1>Эльбрус</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="images/1.jpg" alt="Эльбрус" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-6">
+                <p>Эльбру́с (раннее название Эльборус) — стратовулкан на Кавказе (5642 метра над уровнем моря) — самая высокая горная вершина России и Европы при условии проведения границы между Европой и Азией по Главному Кавказскому хребту или южнее (в иных случаях высочайшей вершиной Европы считается альпийская гора Монблан).</p>
+                <p>Эльбрус включён в список высочайших вершин частей света «Семь вершин». Стекающая с его склонов талая ледниковая вода питает одни из наиболее крупных рек Северного Кавказа: Кубань, Малку и Баксан. За счёт хорошо развитой транспортной и сопутствующей инфраструктуры Эльбрус и прилегающие к нему районы очень популярны в рекреационном, спортивном, туристическом и альпинистском плане. На седловине Эльбруса (5416 м), разделяющей его Восточную (5621 метров) и Западную (5642 метров) вершины, расположен самый высокогорный приют Кавказа.</p>
+                <p>Эльбрус входит в список десяти вершин Российской Федерации для присвоения звания «Снежный барс России».</p>
+            </div>
+        </div>
+
+        <hr class="my-4">
+        <div class="text-center mb-3">
+            <a href="https://edwardcode.net/">Эдуард Ильин</a>, Б9123-09.03.04
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
