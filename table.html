@@ -140,6 +140,7 @@
                                 <option value="system">Горная система</option>
                                 <option value="type">Тип вершины</option>
                                 <option value="region" selected>Регион</option>
+                                <option value="name">Название</option>
                             </select>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -153,11 +154,19 @@
                                 <label class="form-check-label" for="graphMax">Максимальная высота</label>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-3 d-flex align-items-end">
-                            <button class="btn btn-primary">Построить</button>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Тип графика:</label>
+                            <select name="chart_type" id="chartType" class="form-select mb-2">
+                                <option value="bar">Гистограмма</option>
+                                <option value="scatter">Точечная диаграмма</option>
+                                <option value="line">График (линейный)</option>
+                            </select>
+                            <button type="button" id="buildChartBtn" class="btn btn-primary">Построить</button>
                         </div>
                     </div>
+                    <div id="chartError" class="text-danger"></div>
                 </form>
+                <svg id="mainChart" style="width:100%;height:420px;display:none;"></svg>
             </div>
         </div>
 
@@ -168,10 +177,12 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="JavaScript/data.js"></script>
     <script src="JavaScript/table.js"></script>
     <script src="JavaScript/filter.js"></script>
     <script src="JavaScript/sort.js"></script>
+    <script src="JavaScript/chart.js"></script>
     <script src="JavaScript/main.js"></script>
 </body>
 </html>
