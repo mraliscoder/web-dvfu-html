@@ -4,6 +4,7 @@ import { applyFilter, applySort } from "./utils.js";
 import FilterPanel from "./components/FilterPanel.jsx";
 import SortPanel from "./components/SortPanel.jsx";
 import Pagination from "./components/Pagination.jsx";
+import Chart from "./components/Chart.jsx";
 
 const PAGE_SIZES = [5, 10, 20, 50];
 const EMPTY_FILTER = { name: "", heightFrom: "", heightTo: "", system: "", type: "", region: "" };
@@ -98,6 +99,9 @@ export default function App() {
             </div>
 
             <Pagination page={currentPage} pageCount={pageCount} onPage={setPage} />
+
+            <hr className="my-4" />
+            <Chart data={processed} />
 
             <hr className="my-4" />
             <div className="text-center mb-3">
