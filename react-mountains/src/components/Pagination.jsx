@@ -1,7 +1,6 @@
 export default function Pagination({ page, pageCount, onPage }) {
     if (pageCount <= 1) return null;
 
-    // Окно из страниц вокруг текущей.
     const pages = [];
     const start = Math.max(1, page - 2);
     const end = Math.min(pageCount, page + 2);

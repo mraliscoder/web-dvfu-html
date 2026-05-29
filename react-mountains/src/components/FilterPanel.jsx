@@ -1,5 +1,37 @@
-export default function FilterPanel({ filter, onChange, onReset }) {
-    const set = (key) => (e) => onChange(key, e.target.value);
+import { useState } from "react";
+
+const EMPTY_FILTER = { name: "", heightFrom: "", heightTo: "", system: "", type: "", region: "" };
+
+function applyFilter(rows, filter) {
+    const name = filter.name.trim().toLowerCase();
+    const system = filter.system.trim().toLowerCase();
+    const type = filter.type.trim().toLowerCase();
+    const region = filter.region.trim().toLowerCase();
+    const from = filter.heightFrom === "" ? -Infinity : Number(filter.heightFrom);
+    const to = filter.heightTo === "" ? Infinity : Number(filter.heightTo);
+
+    return rows.filter(r =>
+        r["Название"].toLowerCase().includes(name) &&
+        r["Система"].toLowerCase().includes(system) &&
+        r["Тип"].toLowerCase().includes(type) &&
+        r["Регион"].toLowerCase().includes(region) &&
+        r["Высота"] >= from && r["Высота"] <= to
+    );
+}
+
+export default function FilterPanel({ rows, onChange }) {
+    const [filter, setFilter] = useState(EMPTY_FILTER);
+
+    const set = (key) => (e) => {
+        const next = { ...filter, [key]: e.target.value };
+        setFilter(next);
+        onChange(applyFilter(rows, next));
+    };
+
+    const reset = () => {
+        setFilter(EMPTY_FILTER);
+        onChange(rows);
+    };
 
     return (
         <div className="card h-100">
@@ -37,7 +69,7 @@ export default function FilterPanel({ filter, onChange, onReset }) {
                     <input type="text" className="form-control"
                         value={filter.region} onChange={set("region")} />
                 </div>
-                <button className="btn btn-secondary" onClick={onReset}>Сбросить фильтр</button>
+                <button className="btn btn-secondary" onClick={reset}>Сбросить фильтр</button>
             </div>
         </div>
     );
