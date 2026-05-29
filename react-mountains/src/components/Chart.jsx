@@ -54,7 +54,7 @@ export default function Chart({ data }) {
 
     return (
         <div className="card mb-4">
-            <div className="card-header"><h5 className="mb-0">Диаграмма по сгруппированным данным</h5></div>
+            <div className="card-header"><h5 className="mb-0">Диаграмма</h5></div>
             <div className="card-body">
                 <div className="row g-4">
                     <div className="col-lg-4">
