@@ -16,7 +16,6 @@ function Gallery() {
         <ImageList
           variant="masonry"
           sx={{
-            // адаптивное количество колонок
             columnCount: {
               xs: '1 !important',
               sm: '2 !important',

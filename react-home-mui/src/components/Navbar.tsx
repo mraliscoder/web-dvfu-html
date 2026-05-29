@@ -62,7 +62,6 @@ function Navbar({ active }: NavbarProps) {
             </Typography>
           </Box>
 
-          {/* Горизонтальное меню — на md и шире */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -77,7 +76,6 @@ function Navbar({ active }: NavbarProps) {
             ))}
           </Box>
 
-          {/* Кнопка-гамбургер — только на xs/sm */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton aria-label="Меню" onClick={toggleDrawer(true)}>
               <MenuIcon />

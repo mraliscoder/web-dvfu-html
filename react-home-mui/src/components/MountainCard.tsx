@@ -8,7 +8,6 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import type { MountainInfo } from '../data';
 
-// Стилизованный текст описания: вторичный цвет, выравнивание по ширине, отступы
 const StyledTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.secondary,
   textAlign: 'justify',
@@ -21,7 +20,6 @@ interface MountainCardProps {
 }
 
 function MountainCard({ mountain, index }: MountainCardProps) {
-  // Чётные карточки — изображение справа, нечётные — слева (чередование)
   const reversed = index % 2 === 1;
 
   return (
