@@ -3,14 +3,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const margin = { top: 10, bottom: 90, left: 50, right: 10 };
 
-// Рисует диаграмму на SVG: точечную или столбчатую. Размеры берёт из CSS контейнера.
 export default function ChartDraw({ data, series, type }) {
     const wrapRef = useRef(null);
     const svgRef = useRef(null);
     const [width, setWidth] = useState(0);
     const height = 420;
 
-    // Подстраиваем ширину под контейнер (адаптивность).
     useEffect(() => {
         const measure = () => setWidth(wrapRef.current ? wrapRef.current.clientWidth : 0);
         measure();
@@ -42,7 +40,6 @@ export default function ChartDraw({ data, series, type }) {
         const svg = d3.select(svgRef.current);
         svg.selectAll("*").remove();
 
-        // Ось X (категории) — подписи под углом, чтобы влезали длинные названия.
         svg.append("g")
             .attr("transform", `translate(${margin.left}, ${height - margin.bottom})`)
             .call(d3.axisBottom(scaleX))
@@ -52,7 +49,6 @@ export default function ChartDraw({ data, series, type }) {
             .attr("dy", ".15em")
             .attr("transform", "rotate(-35)");
 
-        // Ось Y (высота, м).
         svg.append("g")
             .attr("transform", `translate(${margin.left}, ${margin.top})`)
             .call(d3.axisLeft(scaleY));

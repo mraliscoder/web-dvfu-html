@@ -2,17 +2,14 @@ import { useMemo, useState } from "react";
 import * as d3 from "d3";
 import ChartDraw from "./ChartDraw.jsx";
 
-// Поля, по которым можно группировать (категориальные).
 const GROUP_FIELDS = ["Система", "Тип", "Регион"];
 const CHART_TYPES = ["Точечная диаграмма", "Столбчатая диаграмма"];
 
-// Описание серий по оси OY (агрегаты высоты внутри группы).
 const SERIES = {
     max: { key: "max", label: "Максимальная высота", color: "#d6336c" },
     min: { key: "min", label: "Минимальная высота", color: "#1c7ed6" },
 };
 
-// Группировка строк по выбранному полю + агрегаты min/max высоты.
 function groupData(rows, field) {
     const groups = d3.group(rows, d => d[field]);
     const arr = [];
@@ -20,7 +17,6 @@ function groupData(rows, field) {
         const [min, max] = d3.extent(items, d => d["Высота"]);
         arr.push({ labelX, values: { min, max }, count: items.length });
     }
-    // Сортируем категории по максимуму, чтобы диаграмма читалась слева направо.
     arr.sort((a, b) => b.values.max - a.values.max);
     return arr;
 }
@@ -30,8 +26,8 @@ export default function Chart({ data }) {
     const [oy, setOy] = useState({ max: true, min: false });
     const [type, setType] = useState("Столбчатая диаграмма");
     const [error, setError] = useState("");
+    const [blocked, setBlocked] = useState(false);
 
-    // Применённые настройки (меняются только по кнопке «Построить»).
     const [applied, setApplied] = useState({
         field: "Система",
         oy: { max: true, min: false },
@@ -48,9 +44,11 @@ export default function Chart({ data }) {
         e.preventDefault();
         if (!oy.max && !oy.min) {
             setError("Выберите хотя бы одно значение по оси OY.");
+            setBlocked(true);
             return;
         }
         setError("");
+        setBlocked(false);
         setApplied({ field, oy, type });
     };
 
@@ -74,12 +72,14 @@ export default function Chart({ data }) {
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" id="oy-max"
                                         checked={oy.max}
+                                        onFocus={() => { setError(""); }}
                                         onChange={e => setOy(p => ({ ...p, max: e.target.checked }))} />
                                     <label className="form-check-label" htmlFor="oy-max">Максимальная высота</label>
                                 </div>
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" id="oy-min"
                                         checked={oy.min}
+                                        onFocus={() => { setError(""); }}
                                         onChange={e => setOy(p => ({ ...p, min: e.target.checked }))} />
                                     <label className="form-check-label" htmlFor="oy-min">Минимальная высота</label>
                                 </div>
@@ -99,7 +99,7 @@ export default function Chart({ data }) {
                     </div>
 
                     <div className="col-lg-8">
-                        {grouped.length === 0 ? (
+                        {blocked ? null : grouped.length === 0 ? (
                             <p className="text-muted">Нет данных для построения диаграммы.</p>
                         ) : (
                             <ChartDraw data={grouped} series={series} type={applied.type} />
