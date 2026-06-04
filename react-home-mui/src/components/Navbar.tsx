@@ -35,6 +35,7 @@ const pages: NavPage[] = [
   { id: '1', label: 'Главная', href: 'index.html' },
   { id: '2', label: 'Список гор', href: 'table.html' },
   { id: '3', label: 'О горе', href: 'rock.html' },
+  { id: '4', label: 'Картинка', href: 'images/1.jpg' },
 ];
 
 interface NavbarProps {

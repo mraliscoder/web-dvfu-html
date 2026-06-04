@@ -32,6 +32,7 @@ export interface Peak {
   system: string;
 }
 
+// 6 картинок галереи на главной — как в исходном index.html (до Bootstrap)
 export const galleryItems: GalleryItem[] = [
   { img: Image1, title: 'Эльбрус' },
   { img: Image2, title: 'Дыхтау' },
@@ -39,14 +40,6 @@ export const galleryItems: GalleryItem[] = [
   { img: Image4, title: 'Пик Пушкина' },
   { img: Image5, title: 'Джангитау' },
   { img: Image6, title: 'Шхара' },
-  { img: Image7, title: 'Мижирги' },
-  { img: Image8, title: 'Казбек' },
-  { img: Image9, title: 'Катын-Тау' },
-  { img: Image10, title: 'Шота Руставели' },
-  { img: Image11, title: 'Гестола' },
-  { img: Image12, title: 'Джимара' },
-  { img: Image13, title: 'Ключевская Сопка' },
-  { img: Image14, title: 'Уилпата' },
 ];
 
 export const cards: MountainInfo[] = [

@@ -1,43 +1,53 @@
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import { galleryItems } from '../data';
+
+// Каждой картинке — своя именованная ячейка в гриде; визуальную раскладку
+// задаёт grid-template-areas (десктоп — 4 колонки, 2 ряда; мобилка — 2 колонки).
+const areas = ['a', 'b', 'c', 'd', 'e', 'f'] as const;
 
 function Gallery() {
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
-        Галерея вершин
-      </Typography>
-      <Box sx={{ height: 600, overflowY: 'scroll', borderRadius: 1 }}>
-        <ImageList
-          variant="masonry"
-          sx={{
-            columnCount: {
-              xs: '1 !important',
-              sm: '2 !important',
-              md: '3 !important',
-              lg: '4 !important',
-            },
-          }}
-          gap={8}
-        >
-          {galleryItems.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                srcSet={item.img}
-                src={item.img}
-                alt={item.title}
-                loading="lazy"
-                style={{ borderRadius: 4 }}
-              />
-              <ImageListItemBar position="bottom" title={item.title} />
-            </ImageListItem>
-          ))}
-        </ImageList>
+    <Container maxWidth="xl" sx={{ mt: 3 }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gap: 1,
+          gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' },
+          gridAutoRows: { xs: 160, sm: 200, md: 240 },
+          gridTemplateAreas: {
+            xs: '"a a" "c b" "d e" "f f"',
+            md: '"a a c b" "d e f f"',
+          },
+        }}
+      >
+        {galleryItems.map((item, i) => (
+          <Box
+            key={item.title}
+            component="a"
+            href="rock.html"
+            sx={{
+              gridArea: areas[i],
+              display: 'block',
+              overflow: 'hidden',
+              borderRadius: 1,
+            }}
+          >
+            <Box
+              component="img"
+              src={item.img}
+              alt={item.title}
+              sx={{
+                display: 'block',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                transition: 'transform 0.3s ease',
+                '&:hover': { transform: 'scale(1.03)' },
+              }}
+            />
+          </Box>
+        ))}
       </Box>
     </Container>
   );
