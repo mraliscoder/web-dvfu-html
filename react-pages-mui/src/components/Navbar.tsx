@@ -36,6 +36,7 @@ const pages: NavPage[] = [
   { id: '1', label: 'Главная', to: '/' },
   { id: '2', label: 'Список гор', to: '/list' },
   { id: '3', label: 'Диаграммы', to: '/chart' },
+  { id: '4', label: 'Проверь себя', to: '/testing' },
 ];
 
 interface NavbarProps {
